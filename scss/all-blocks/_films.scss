@@ -1,0 +1,259 @@
+
+html{
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    border: 0;
+    clip: rect(0 0 0 0)
+  }
+
+img{
+    vertical-align: middle;
+    object-fit: cover;
+}
+
+main{
+    flex-grow: 1;
+}
+
+.films{
+    padding-top: 30px;
+}
+
+.container{
+    max-width: 1320px;
+    width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+.films__from{
+    margin-bottom: 50px;
+}
+
+.select__sort, .films__select{
+    display: block;
+    width: 40%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 3px 1px black;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.films__input{
+    display: block;
+    width: 40%;
+    height: 50px;
+    margin: 0 auto;
+    text-align: center;
+    border: none;
+    outline: none;
+    box-shadow: 0 0 3px 1px black;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    &:focus{
+        box-shadow: inset 0 0 2px 1px darkcyan;
+    }
+}
+
+.films__button{
+    display: block;
+    width: 280px;
+    padding: 14px 0;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+    border: none;
+    box-shadow: 0 0 2px 1px black;
+    border-radius: 4px;
+    &:active{
+        background-color: rgb(207, 247, 247);
+    }
+}
+
+.films__list{
+    display: flex;
+    justify-content: center;
+    column-gap: 20px;
+    flex-wrap: wrap;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.films__item{
+    position: relative;
+   width: 300px;
+}
+
+
+.films__item::before{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 300px;
+    height: 450px;
+    border-radius: 10px;
+    background-color: black;
+    opacity: 0.3;
+    content: '';
+}
+
+.films__poster{
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 40px;
+}
+
+.films__heading{
+    display: block;
+    position: absolute;
+   top: 30px;
+   right: 50%;
+   z-index: 1;
+   width: 95%;
+    margin: 0;
+    text-align: center;
+    font-weight: 600;
+    font-size: 28px;
+    color: white;
+    transform: translateX(50%);
+}
+
+.film__details{
+    display: none;
+position: absolute;
+padding: 0 15px;
+top: 12%;
+right: 50%;
+transform: translate(50%);
+height: 350px;
+width: 100%;
+overflow: auto;
+text-align: center;
+color: white;
+    margin: 0;
+    font-size: 14px;
+}
+
+.film__summary{
+    font-size: 25px;
+}
+
+.film__marquee{
+    display: none;
+    position: absolute;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 0 3px 1px white;
+}
+
+.films__genres{
+    width: 100%;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    padding: 5px 10px;
+    color: white;
+}
+
+.films__time{
+    display: block;
+  position: absolute;
+  bottom: 17%;
+  right: 50%;
+  font-size: 20px;
+  transform: translateX(50%);
+  color: white;
+  z-index: 2;
+}
+
+
+.films__genre+ .films__genre{
+    margin-left: 10px;
+}
+
+.films__item:hover{
+    cursor: pointer;
+    &::before{
+        opacity: 0.7;
+    }
+    .film__marquee{
+        display: block;
+    }
+
+    .films__time{
+        display: none;
+    }
+
+    .films__heading{
+        display: none;
+    }
+
+    .film__details{
+        display: block;
+    }
+}
+
+::-webkit-scrollbar{    
+    width: 7px;
+}
+
+::-webkit-scrollbar-track{
+    border-radius: 5px;
+    box-shadow: 0 0 10px black;
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 5px;
+    background-color: darkcyan;
+}
+
+::-webkit-scrollbar-thumb:hover{
+    background-color: red;
+}
+
+@media only screen and(max-width: 600px){
+    .films__select{
+        width: 260px;
+        text-align: center;
+    }
+}
+

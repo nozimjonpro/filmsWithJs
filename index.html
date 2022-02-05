@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/main.min.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <section class="films">
+        <div class="container">
+            <form class="films__form">
+                <select class="select__sort" name="" id="">
+                  <option value="" hidden>Choose order</option>
+                    <option value="a_z">A-Z</option>
+                    <option value="z_a">Z-A</option>
+                  </select>
+                <select class="films__select"></select>
+                <input class="films__input" type="text" placeholder="Write film's name...">
+                <button class="films__button" type="submit">Filter</button>
+            </form>
+          <ul class="films__list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <template id="films__template">
+      <li class="films__item">
+        <h3 class="films__heading">Shazam!</h3>
+        <img
+          class="films__poster"
+          src="https://image.tmdb.org/t/p/w500/xnopI5Xtky18MPhK40cZAGAOVeV.jpg"
+          alt="poster"
+          width="300"
+          height="450"
+        />
+       <details class="film__details">
+         <summary class="film__summary">Overview</summary>
+        <p class="films__overview">
+          A boy is given the ability to become an adult superhero in times of
+          need with a single magic word.
+        </p>
+       </details>
+        <time class="films__time">1553299200</time>
+       <marquee class="film__marquee" behavior="" direction="right">
+        <ul class="films__genres"></ul>
+       </marquee>
+      </li>
+    </template>
+    <template id="films-geres__template">
+      <li class="films__genre"></li>
+    </template>
+    <script src="js/films.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
